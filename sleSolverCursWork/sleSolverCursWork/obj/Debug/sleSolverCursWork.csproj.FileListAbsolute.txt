@@ -1,0 +1,9 @@
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\sleSolverCursWork.exe.config
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\sleSolverCursWork.exe
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\sleSolverCursWork.pdb
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\MPI.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolverCursWork.csproj.AssemblyReference.cache
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolverCursWork.csproj.CoreCompileInputs.cache
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolve.36D56B4A.Up2Date
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolverCursWork.exe
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolverCursWork.pdb
