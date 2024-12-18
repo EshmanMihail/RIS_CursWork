@@ -10,37 +10,7 @@ namespace sleSolverCursWork
 {
     public class MatrixConsoleInput
     {
-        public static void GetDataFromFile()
-        {
-            try
-            {
-                Console.WriteLine("Введите путь к файлу:");
-                string path = Console.ReadLine();
-
-                int lineCount = GetNumberOfLines(path);
-
-                string[] strs = File.ReadAllLines(path);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Файл по заданому пути не найден.");
-            }
-        }
-
-        private static int GetNumberOfLines(string path)
-        {
-            int lineCount = 0;
-            using (StreamReader sr = new StreamReader(path))
-            {
-                while (sr.ReadLine() != null)
-                {
-                    lineCount++;
-                }
-            }
-            return lineCount;
-        }
-
-        public static double[] Input_A_Coefficients(int n)
+        public static double[,] Input_A_Coefficients(int n)
         {
             string A = "";
             Console.WriteLine("Введите матрицу коэффициентов:");

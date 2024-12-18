@@ -8,7 +8,7 @@ namespace sleSolverCursWork
 {
     internal class MatrixConverter
     {
-        public static double[] StringToMatrix(string serializedData)
+        public static double[] StringToMatrixOfVector(string serializedData)
         {
             string[] lines = serializedData.Split('\n');
 
@@ -24,6 +24,25 @@ namespace sleSolverCursWork
                 }
             }
             return deserializedMatrix; 
+        }
+
+        public static double[,] StringToMatrix(string serializedData)
+        {
+            string[] lines = serializedData.Trim().Split('\n');
+            int rows = lines.Length;
+            int cols = lines[0].Split(' ').Length;
+            double[,] deserializedMatrix = new double[rows, cols];
+
+            for (int i = 0; i < rows; i++)
+            {
+                string[] elements = lines[i].Split(' ');
+                for (int j = 0; j < cols; j++)
+                {
+                    deserializedMatrix[i, j] = double.Parse(elements[j]);
+                }
+            }
+
+            return deserializedMatrix;
         }
 
         public static double[] StringToVector(string vector)

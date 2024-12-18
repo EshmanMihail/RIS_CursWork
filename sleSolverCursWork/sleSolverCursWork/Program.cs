@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MPI;
+using MathNet.Numerics.LinearAlgebra;
+using System.Threading;
 
 namespace sleSolverCursWork
 {
@@ -19,60 +21,183 @@ namespace sleSolverCursWork
                 int rank = comm.Rank; // Ранг текущего процесса
                 int size = comm.Size; // Общее количество процессов
 
+                int t = 2;
+
                 int n = 1;
-                double[] a = new double[1];
+                double[,] matrix = new double[1, 1];
                 double[] b = new double[1]; 
 
                 if (rank == 0)
                 {
-                    Console.WriteLine("Выберите способ ввода матрицы:");
-                    Console.WriteLine("1. Чтение из файла.");
-                    Console.WriteLine("2. Ввод с консоли.");
-
-                    int t = int.Parse(Console.ReadLine());
+                    ConsoleMenu();
+                    t = int.Parse(Console.ReadLine());
                     if (t == 1)
                     {
-                        MatrixConsoleInput.GetDataFromFile();
+                        FileInput(out matrix, out n, out  b);
                     }
                     else
                     {
-                        Console.WriteLine("Введите размерность матрицы: ");
-                        n = int.Parse(Console.ReadLine());
-                        a = MatrixConsoleInput.Input_A_Coefficients(n);
-                        b = MatrixConsoleInput.Input_B_Coefficients(n);
-
-                        Console.WriteLine("Нажмите любую клавишу для начала вычисления.");
-                        string pause = Console.ReadLine();
+                        ConsoleInput(out matrix, out n, out b);
                     }
                 }
                 comm.Broadcast(ref n, 0);
 
                 double[] outer = new double[1];
-
                 if (rank == 0)
                 {
                     Stopwatch timer = new Stopwatch();
                     timer.Start();
 
-                    Console.WriteLine("n = " + n);
-                    outer = Dot_mpi_root(a, b, n, n, 1, size);
+                    double[] aInversed = СalculateInverseMatrix(matrix);
+                    outer = Dot_mpi_root(aInversed, b, n, n, 1, size);
 
                     timer.Stop();
                     string timeOfSolving = GetElapsedTime(timer);
-                    Console.WriteLine(timeOfSolving);
 
-                    for (int i = 0; i < outer.Length; i++)
+                    Console.WriteLine(timeOfSolving);
+                    if (t == 1)
                     {
-                        Console.Write(outer[i] + " ");
+                        string pathToResultFile = @"C:\Учёба\7 семестр\РИС\sleSolverCursWork\FileResult.txt";
+                        ResultWriter.WriteResultInFile(pathToResultFile, outer);
                     }
+                    else PrintResultVectorOnConsole(outer);
                 }
                 else
                 {
-                    Console.WriteLine("n = " + n);
                     Dot_Mpi(n, n, 1, rank, size);
                 }
             }
         }
+
+        private static void ConsoleMenu()
+        {
+            Console.WriteLine("Выберите способ ввода матрицы:");
+            Console.WriteLine("1. Чтение из файла.");
+            Console.WriteLine("2. Ввод с консоли.");
+        }
+
+        private static void FileInput(out double[,] matrix, out int n, out double[] b)
+        {
+            Console.WriteLine("Введите путь к файлу с кофициентами A:");
+            string pathA = Console.ReadLine();
+            Console.WriteLine("Введите путь к файлу с кофициентами B:");
+            string pathB = Console.ReadLine();
+
+            matrix = MatrixFileInput.GetMatrixFromFile(pathA);
+            n = matrix.GetLength(0);
+            b = MatrixFileInput.GetVectorFromFile(pathB);
+
+            Console.WriteLine("Нажмите любую клавишу для начала вычисления.");
+            string pause = Console.ReadLine();
+        }
+
+        private static void ConsoleInput(out double[,] matrix, out int n, out double[] b)
+        {
+            Console.WriteLine("Введите размерность матрицы: ");
+            n = int.Parse(Console.ReadLine());
+            matrix = MatrixConsoleInput.Input_A_Coefficients(n);
+            b = MatrixConsoleInput.Input_B_Coefficients(n);
+
+            Console.WriteLine("Нажмите любую клавишу для начала вычисления.");
+            string pause = Console.ReadLine();
+        }
+
+        private static double[] СalculateInverseMatrix(double[,] matrix)
+        {
+            var numMatrix = Matrix<double>.Build.DenseOfArray(matrix);
+            Matrix<double> inversed = numMatrix.Inverse();
+            return MatrixToFlatArray(inversed);
+        }
+
+        private static double[] MatrixToFlatArray(Matrix<double> matrix)
+        {
+            int rows = matrix.RowCount;
+            int cols = matrix.ColumnCount;
+
+            double[] flatArray = new double[rows * cols];
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    flatArray[i * cols + j] = matrix[i, j];
+                }
+            }
+
+            return flatArray;
+        }
+
+        private static void PrintResultVectorOnConsole(double[] outer)
+        {
+            for (int i = 0; i < outer.Length; i++)
+            {
+                if (Math.Abs(outer[i]) < 1e-10)
+                {
+                    Console.Write(0 + " ");
+                }
+                else
+                {
+                    Console.Write(outer[i] + " ");
+                }
+            }
+        }
+
+        private static string GetElapsedTime(Stopwatch stopwatch)
+        {
+            TimeSpan timeElapsed = stopwatch.Elapsed;
+            double milliseconds = timeElapsed.TotalMilliseconds;
+            int minutes = timeElapsed.Minutes;
+            int seconds = timeElapsed.Seconds;
+
+            string result = "";
+            result += "\n" + minutes + " минут; " + seconds + " секунд; " + milliseconds.ToString("0.###") + " милисекунд.";
+
+            return result;
+        }
+
+
+        public static double[,] ConvertTo2DMatrix(double[] flatMatrix, int n)
+        {
+            double[,] matrix = new double[n, n];
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = flatMatrix[i * n + j];
+                }
+            }
+            return matrix;
+        }
+        public static void PrintMatrix(Matrix<double> matrix)
+        {
+            int rows = matrix.RowCount;
+            int cols = matrix.ColumnCount;
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write(matrix[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        public static void PrintMatrix(double[,] matrix)
+        {
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write(matrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
 
         #region Math
         private static double[] Dot_mpi_root(double[] a, double[] b, int n, int m, int p, int size)
@@ -178,18 +303,5 @@ namespace sleSolverCursWork
             }
         }
         #endregion
-
-        private static string GetElapsedTime(Stopwatch stopwatch)
-        {
-            TimeSpan timeElapsed = stopwatch.Elapsed;
-            double milliseconds = timeElapsed.TotalMilliseconds;
-            int minutes = timeElapsed.Minutes;
-            int seconds = timeElapsed.Seconds;
-
-            string result = "";
-            result += "\n" + minutes + " минут; " + seconds + " секунд; " + milliseconds.ToString("0.###") + " милисекунд.";
-
-            return result;
-        }
     }
 }

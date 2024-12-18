@@ -7,3 +7,17 @@ C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSol
 C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolve.36D56B4A.Up2Date
 C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolverCursWork.exe
 C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\obj\Debug\sleSolverCursWork.pdb
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\MathNet.Numerics.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Buffers.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Memory.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Numerics.Vectors.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.ValueTuple.dll
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\MathNet.Numerics.xml
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Buffers.xml
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Memory.xml
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Numerics.Vectors.xml
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Учёба\7 семестр\РИС\sleSolverCursWork\sleSolverCursWork\sleSolverCursWork\bin\Debug\System.ValueTuple.xml
