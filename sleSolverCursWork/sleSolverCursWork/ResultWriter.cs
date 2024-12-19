@@ -16,10 +16,9 @@ namespace sleSolverCursWork
             {
                 foreach (double value in outer)
                 {
-                    writer.WriteLine(value.ToString("0.000"));
+                    writer.WriteLine(value.ToString("0.0000000"));
                 }
             }
-            Console.WriteLine("Результат был записан в файл.");
         }
     }
 }

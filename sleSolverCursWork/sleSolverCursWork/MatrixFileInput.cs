@@ -7,18 +7,21 @@ using System.Threading.Tasks;
 
 namespace sleSolverCursWork
 {
-    internal class MatrixFileInput
+    public class MatrixFileInput
     {
         public static double[,] GetMatrixFromFile(string path)
         {
             try
             {
+                
+                Console.WriteLine(GetNumberOfLines(path).ToString());
+
                 string[] lines = File.ReadAllLines(path);
                 int matSize = lines.Length;
                 double[,] matrix = new double[matSize, matSize];
                 for (int i = 0; i < matSize; i++)
                 {
-                    string[] coeffs = lines[i].Split(' ');
+                    string[] coeffs = NormalizeSpaces(lines[i]).Split(' ');
                     for (int j = 0; j < coeffs.Length; j++)
                     {
                         matrix[i, j] = double.Parse(coeffs[j]);
@@ -29,7 +32,7 @@ namespace sleSolverCursWork
             }
             catch (Exception e)
             {
-                throw new Exception("Файл по заданому пути не найден или входная строка имела не верный формат.");
+                throw new Exception("Файл с матрицей по заданому пути не найден или входная строка имела не верный формат.");
             }
         }
 
@@ -38,20 +41,24 @@ namespace sleSolverCursWork
             try
             {
                 //path = @"C:\Учёба\7 семестр\РИС\sleSolverCursWork\FileB.txt";
-                string text = File.ReadAllText(path);
-                string[] values = text.Split('\n');
-                double[] vector = new double[values.Length];
-                for (int i = 0; i < values.Length; i++)
+                string[] lines = File.ReadAllLines(path);
+                double[] vector = new double[lines.Length];
+                for (int i = 0; i < lines.Length; i++)
                 {
-                    vector[i] = double.Parse(values[i]);
+                    vector[i] = double.Parse(NormalizeSpaces(lines[i]));
                 }
 
                 return vector;
             }
             catch (Exception e)
             {
-                throw new Exception("Файл по заданому пути не найден или входная строка имела не верный формат.");
+                throw new Exception(e.Message);
             }
+        }
+
+        public static string NormalizeSpaces(string text)
+        {
+            return System.Text.RegularExpressions.Regex.Replace(text, @"\s+", " ").Trim();
         }
 
         private static int GetNumberOfLines(string path)

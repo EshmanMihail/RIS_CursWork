@@ -22,6 +22,8 @@ namespace sleSolverCursWork
                 else line = Console.ReadLine().Trim() + "\n";
                 A += line;
             }
+            //double[,] matrix = MatrixConverter.StringToMatrix(A);
+            //return SolvingHelper.AddZeroColumns(matrix, Program.procCount);
             return MatrixConverter.StringToMatrix(A);
         }
 

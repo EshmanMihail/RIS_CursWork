@@ -13,6 +13,9 @@ namespace sleSolverCursWork
     internal class Program
     {
         const int maxSizeOfArray = 199999999;
+        public static int procCount = 0;
+
+        private static bool isRunning = true;
         static void Main(string[] args)
         {
             using (new MPI.Environment(ref args)) // Инициализация MPI
@@ -20,6 +23,7 @@ namespace sleSolverCursWork
                 Intracommunicator comm = Communicator.world;
                 int rank = comm.Rank; // Ранг текущего процесса
                 int size = comm.Size; // Общее количество процессов
+                procCount = size;
 
                 int t = 2;
 
@@ -33,11 +37,15 @@ namespace sleSolverCursWork
                     t = int.Parse(Console.ReadLine());
                     if (t == 1)
                     {
-                        FileInput(out matrix, out n, out  b);
+                        FileInput(out matrix, out n, out b);
+                    }
+                    else if (t == 2)
+                    {
+                        ConsoleInput(out matrix, out n, out b);
                     }
                     else
                     {
-                        ConsoleInput(out matrix, out n, out b);
+                        Console.WriteLine("Неверный ввод.");
                     }
                 }
                 comm.Broadcast(ref n, 0);
@@ -47,6 +55,7 @@ namespace sleSolverCursWork
                 {
                     Stopwatch timer = new Stopwatch();
                     timer.Start();
+                    Console.WriteLine("Вычисление...");
 
                     double[] aInversed = СalculateInverseMatrix(matrix);
                     outer = Dot_mpi_root(aInversed, b, n, n, 1, size);
@@ -59,6 +68,7 @@ namespace sleSolverCursWork
                     {
                         string pathToResultFile = @"C:\Учёба\7 семестр\РИС\sleSolverCursWork\FileResult.txt";
                         ResultWriter.WriteResultInFile(pathToResultFile, outer);
+                        Console.WriteLine("Результат был записан в файл.");
                     }
                     else PrintResultVectorOnConsole(outer);
                 }
@@ -80,6 +90,16 @@ namespace sleSolverCursWork
         {
             Console.WriteLine("Введите путь к файлу с кофициентами A:");
             string pathA = Console.ReadLine();
+
+            if (pathA == "back" || pathA == "b")
+            {
+                Console.Clear();
+                matrix = new double[1, 1];
+                n = 1;
+                b = new double[1];
+                return;
+            }
+
             Console.WriteLine("Введите путь к файлу с кофициентами B:");
             string pathB = Console.ReadLine();
 
@@ -88,7 +108,7 @@ namespace sleSolverCursWork
             b = MatrixFileInput.GetVectorFromFile(pathB);
 
             Console.WriteLine("Нажмите любую клавишу для начала вычисления.");
-            string pause = Console.ReadLine();
+            Console.ReadLine();
         }
 
         private static void ConsoleInput(out double[,] matrix, out int n, out double[] b)
@@ -99,7 +119,7 @@ namespace sleSolverCursWork
             b = MatrixConsoleInput.Input_B_Coefficients(n);
 
             Console.WriteLine("Нажмите любую клавишу для начала вычисления.");
-            string pause = Console.ReadLine();
+            Console.ReadLine();
         }
 
         private static double[] СalculateInverseMatrix(double[,] matrix)
@@ -137,7 +157,7 @@ namespace sleSolverCursWork
                 }
                 else
                 {
-                    Console.Write(outer[i] + " ");
+                    Console.Write(outer[i].ToString("0.000") + " ");
                 }
             }
         }
@@ -153,49 +173,6 @@ namespace sleSolverCursWork
             result += "\n" + minutes + " минут; " + seconds + " секунд; " + milliseconds.ToString("0.###") + " милисекунд.";
 
             return result;
-        }
-
-
-        public static double[,] ConvertTo2DMatrix(double[] flatMatrix, int n)
-        {
-            double[,] matrix = new double[n, n];
-
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    matrix[i, j] = flatMatrix[i * n + j];
-                }
-            }
-            return matrix;
-        }
-        public static void PrintMatrix(Matrix<double> matrix)
-        {
-            int rows = matrix.RowCount;
-            int cols = matrix.ColumnCount;
-
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    Console.Write(matrix[i,j] + " ");
-                }
-                Console.WriteLine();
-            }
-        }
-        public static void PrintMatrix(double[,] matrix)
-        {
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    Console.Write(matrix[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
         }
 
 

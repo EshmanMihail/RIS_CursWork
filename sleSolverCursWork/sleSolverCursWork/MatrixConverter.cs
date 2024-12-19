@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sleSolverCursWork
 {
-    internal class MatrixConverter
+    public class MatrixConverter
     {
         public static double[] StringToMatrixOfVector(string serializedData)
         {
@@ -28,6 +28,7 @@ namespace sleSolverCursWork
 
         public static double[,] StringToMatrix(string serializedData)
         {
+            serializedData = serializedData.Trim();
             string[] lines = serializedData.Trim().Split('\n');
             int rows = lines.Length;
             int cols = lines[0].Split(' ').Length;
@@ -47,6 +48,7 @@ namespace sleSolverCursWork
 
         public static double[] StringToVector(string vector)
         {
+            vector = vector.Trim();
             string[] vectorElements = vector.Split(' ');
             double[] deserializedVector = new double[vectorElements.Length];
             for (int i = 0; i < vectorElements.Length; i++)
@@ -54,33 +56,6 @@ namespace sleSolverCursWork
                 deserializedVector[i] = double.Parse(vectorElements[i]);
             }
             return deserializedVector;
-        }
-
-        private static string VectorToString(double[,] A, double[] B)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            int n = A.GetLength(0);
-            sb.AppendLine(n.ToString());
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    sb.Append(A[i, j]);
-                    if (j < n - 1)
-                        sb.Append(" ");
-                }
-                sb.AppendLine();
-            }
-
-            for (int i = 0; i < B.Length; i++)
-            {
-                sb.Append(B[i]);
-                if (i < B.Length - 1)
-                    sb.Append(" ");
-            }
-
-            return sb.ToString();
         }
     }
 }

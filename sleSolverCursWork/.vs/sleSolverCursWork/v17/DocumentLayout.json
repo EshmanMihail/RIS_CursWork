@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|c:\\\u0443\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0438\u0441\\slesolvercurswork\\slesolvercurswork\\slesolvercurswork\\resultwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|solutionrelative:slesolvercurswork\\resultwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0EE92309-BF30-4A43-A3FF-6943793DE984}|Unit_Tests\\Unit_Tests.csproj|c:\\\u0443\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0438\u0441\\slesolvercurswork\\slesolvercurswork\\unit_tests\\matrixtoflatarraytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EE92309-BF30-4A43-A3FF-6943793DE984}|Unit_Tests\\Unit_Tests.csproj|solutionrelative:unit_tests\\matrixtoflatarraytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|c:\\\u0443\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0438\u0441\\slesolvercurswork\\slesolvercurswork\\slesolvercurswork\\matrixfileinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|solutionrelative:slesolvercurswork\\matrixfileinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\slesolvercurswork\\matrixconsoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|solutionrelative:slesolvercurswork\\matrixconsoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|c:\\\u0443\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0438\u0441\\slesolvercurswork\\slesolvercurswork\\slesolvercurswork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\slesolvercurswork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA21687A-1447-4DD2-A7EF-4DDF6DB0C14A}|sleSolverCursWork\\sleSolverCursWork.csproj|solutionrelative:slesolvercurswork\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EE92309-BF30-4A43-A3FF-6943793DE984}|Unit_Tests\\Unit_Tests.csproj|c:\\\u0443\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0438\u0441\\slesolvercurswork\\slesolvercurswork\\unit_tests\\normalizespacestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EE92309-BF30-4A43-A3FF-6943793DE984}|Unit_Tests\\Unit_Tests.csproj|solutionrelative:unit_tests\\normalizespacestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,51 +67,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ResultWriter.cs",
-              "DocumentMoniker": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\ResultWriter.cs",
-              "RelativeDocumentMoniker": "sleSolverCursWork\\ResultWriter.cs",
-              "ToolTip": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\ResultWriter.cs",
-              "RelativeToolTip": "sleSolverCursWork\\ResultWriter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA6AAAAAAAAAA==",
+              "Title": "MatrixToFlatArrayTests.cs",
+              "DocumentMoniker": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\Unit_Tests\\MatrixToFlatArrayTests.cs",
+              "RelativeDocumentMoniker": "Unit_Tests\\MatrixToFlatArrayTests.cs",
+              "ToolTip": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\Unit_Tests\\MatrixToFlatArrayTests.cs",
+              "RelativeToolTip": "Unit_Tests\\MatrixToFlatArrayTests.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwAEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T19:21:12.847Z",
+              "WhenOpened": "2024-12-19T23:07:16.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NormalizeSpacesTests.cs",
+              "DocumentMoniker": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\Unit_Tests\\NormalizeSpacesTests.cs",
+              "RelativeDocumentMoniker": "Unit_Tests\\NormalizeSpacesTests.cs",
+              "ToolTip": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\Unit_Tests\\NormalizeSpacesTests.cs",
+              "RelativeToolTip": "Unit_Tests\\NormalizeSpacesTests.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T22:52:50.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MatrixFileInput.cs",
-              "DocumentMoniker": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\MatrixFileInput.cs",
-              "RelativeDocumentMoniker": "sleSolverCursWork\\MatrixFileInput.cs",
-              "ToolTip": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\MatrixFileInput.cs",
-              "RelativeToolTip": "sleSolverCursWork\\MatrixFileInput.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwCcAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T18:13:34.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MatrixConsoleInput.cs",
-              "DocumentMoniker": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\MatrixConsoleInput.cs",
-              "RelativeDocumentMoniker": "sleSolverCursWork\\MatrixConsoleInput.cs",
-              "ToolTip": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\MatrixConsoleInput.cs",
-              "RelativeToolTip": "sleSolverCursWork\\MatrixConsoleInput.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T14:29:58.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\Program.cs",
               "RelativeDocumentMoniker": "sleSolverCursWork\\Program.cs",
               "ToolTip": "C:\\\u0423\u0447\u0451\u0431\u0430\\7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0418\u0421\\sleSolverCursWork\\sleSolverCursWork\\sleSolverCursWork\\Program.cs",
               "RelativeToolTip": "sleSolverCursWork\\Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAQwEAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwv4kAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T16:44:58.81Z",
               "EditorCaption": ""
